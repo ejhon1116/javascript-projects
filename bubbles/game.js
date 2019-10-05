@@ -8,8 +8,20 @@ function bubble(x, y, speed) {
     this.y += this.speed;
   }
   this.display = function() {
-    fill("cyan");
+    fill(generateColor());
     circle(this.x, windowHeight - this.y, this.size);
+  }
+}
+
+function generateColor() {
+  red = 0;
+  green = 0;
+  blue = 0;
+  while ((red - 20 < green || red + 20 > green) && (green - 20 < blue || green + 20 > blue) && (red - 20 < blue || red + 20 > blue)) {
+    red = random(255);
+    green = random(255);
+    blue = random(255);
+    return (red, green, blue);
   }
 }
 
