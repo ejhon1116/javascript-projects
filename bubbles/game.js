@@ -4,11 +4,12 @@ function bubble(x, y, speed) {
   this.y = y;
   this.speed = speed;
   this.size = speed * 5;
+  this.color = generateColor();
   this.move = function() {
     this.y += this.speed;
   }
   this.display = function() {
-    fill(generateColor());
+    fill(this.color);
     circle(this.x, windowHeight - this.y, this.size);
   }
 }
